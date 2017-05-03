@@ -1,5 +1,6 @@
 
-# Ontology for JADE Prisoner's Dilemma Example (info updated code only)
+# Ontology for JADE Prisoner's Dilemma Example 
+`(updated code only based on /src/Sequential repo)`
 
 ## Our Basic Information Objects
 These are the classes(Beans) containing all the information-objects we want agents to exchange
