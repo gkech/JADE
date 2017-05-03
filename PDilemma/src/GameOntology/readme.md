@@ -17,7 +17,7 @@ We implemented message sending and receiving code (from strings to objects and v
 1. `HostBehaviour.java` which contains the behaviour implementation for HostAgent
 2. `PlayBehaviour.java`  which contains the behaviour implementation for Prisoner Dilemma Players
 
-For each of these classes, we had to declare codec and ontology, in order to "speak" the same language and "know" the same ontology for message parsing purposes.
+For each of these classes, we had to declare codec and ontology, in order to "speak" the same language and "know" the same ontology. According to the JADE ontology manuals, τhe substance using ontologies is to avoid parsing string msgs.
 ```java
     /**
      * Example Code
