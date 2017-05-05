@@ -141,19 +141,18 @@ public class HostBehaviour extends SequentialBehaviour{
 	    			
 		    		if(msgCounter==numAgents){
 						pg_payoffs=CalculatePayoffs(pg_action);
+						PersonalPayoff pof = new PersonalPayoff();
 						ACLMessage payoffs = new ACLMessage(ACLMessage.INFORM );
+						payoffs.setConversationId("PDilemma Results");
+						payoffs.setOntology(ontology.getName());
+						payoffs.setLanguage(codec.getName());
 						//fetch payoff vector to different agents
 						for(int i = 0;  i < numAgents;  i++){
 							payoffs.addReceiver( (AID)playersList.get(i));
-							payoffs.setConversationId("PDilemma Results");
-							payoffs.setOntology(ontology.getName());
-							payoffs.setLanguage(codec.getName());
-							
-							//payoffs.setContent( Integer.toString(pg_payoffs[i]) );
-							PersonalPayoff pof = new PersonalPayoff();
 							pof.setPpayoff(pg_payoffs[i]);
 							manager.fillContent(payoffs, pof);
 							myAgent.send(payoffs);
+							payoffs.removeReceiver((AID)playersList.get(i));
 						}
 		    			finish=true;
 		    		}
