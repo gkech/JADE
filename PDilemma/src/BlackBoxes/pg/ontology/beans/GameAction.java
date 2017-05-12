@@ -9,10 +9,10 @@ import jade.content.Predicate;
  * @author gkech
  *
  */
-public class GameAction implements Predicate{
+public class GameAction implements Predicate {
 	private static final long serialVersionUID = 1L;
 	private String AgentAction;
-	
+
 	/**
 	 * @return the agentAction
 	 */
@@ -21,14 +21,11 @@ public class GameAction implements Predicate{
 	}
 
 	/**
-	 * @param agentAction the agentAction to set
+	 * @param agentAction
+	 *            the agentAction to set
 	 */
 	public void setAgentAction(String agentAction) {
 		AgentAction = agentAction;
 	}
-
-	
-	
-	
 
 }

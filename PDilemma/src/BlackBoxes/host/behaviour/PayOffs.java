@@ -4,33 +4,33 @@ import java.util.Vector;
 
 import jade.content.Predicate;
 
-public class PayOffs implements Predicate{
+public class PayOffs implements Predicate {
 	private static final long serialVersionUID = 1L;
-	Vector<Integer>  Cooperation = new Vector<Integer>(); //vector of vectors
-	Vector<Integer>  Co_Defect = new Vector<Integer>(); //vector of vectors
-	Vector<Integer>  Defect_Co = new Vector<Integer>(); //vector of vectors
-	Vector<Integer>  Defect = new Vector<Integer>(); //vector of vectors
-	
-	public PayOffs(){
-		
-		//The rules below were taken from Michael Wooldridge's book, An Introduction to MultiAgent Systems
-		//Agents Cooperation payoffs
+	Vector<Integer> Cooperation = new Vector<Integer>(); // vector of vectors
+	Vector<Integer> Co_Defect = new Vector<Integer>(); // vector of vectors
+	Vector<Integer> Defect_Co = new Vector<Integer>(); // vector of vectors
+	Vector<Integer> Defect = new Vector<Integer>(); // vector of vectors
+
+	public PayOffs() {
+
+		// The rules below were taken from Michael Wooldridge's book, An
+		// Introduction to MultiAgent Systems
+		// Agents Cooperation payoffs
 		Cooperation.add(1);
 		Cooperation.add(1);
-		
-		//Agent mixed payoffs	
+
+		// Agent mixed payoffs
 		Co_Defect.add(5);
 		Co_Defect.add(0);
-		
-		//Agent mixed payoffs
+
+		// Agent mixed payoffs
 		Defect_Co.add(0);
 		Defect_Co.add(5);
-		
-		//Agents Defect payoffs
+
+		// Agents Defect payoffs
 		Defect.add(3);
 		Defect.add(3);
 	}
-
 
 	public PayOffs(Vector<Integer> cooperation, Vector<Integer> co_Defect, Vector<Integer> defect_Co,
 			Vector<Integer> defect) {
@@ -49,12 +49,12 @@ public class PayOffs implements Predicate{
 	}
 
 	/**
-	 * @param cooperation the cooperation to set
+	 * @param cooperation
+	 *            the cooperation to set
 	 */
 	public void setCooperation(Vector<Integer> cooperation) {
 		Cooperation = cooperation;
 	}
-
 
 	/**
 	 * @return the co_Defect
@@ -63,14 +63,13 @@ public class PayOffs implements Predicate{
 		return Co_Defect;
 	}
 
-
 	/**
-	 * @param co_Defect the co_Defect to set
+	 * @param co_Defect
+	 *            the co_Defect to set
 	 */
 	public void setCo_Defect(Vector<Integer> co_Defect) {
 		Co_Defect = co_Defect;
 	}
-
 
 	/**
 	 * @return the defect_Co
@@ -79,14 +78,13 @@ public class PayOffs implements Predicate{
 		return Defect_Co;
 	}
 
-
 	/**
-	 * @param defect_Co the defect_Co to set
+	 * @param defect_Co
+	 *            the defect_Co to set
 	 */
 	public void setDefect_Co(Vector<Integer> defect_Co) {
 		Defect_Co = defect_Co;
 	}
-
 
 	/**
 	 * @return the defect
@@ -95,9 +93,9 @@ public class PayOffs implements Predicate{
 		return Defect;
 	}
 
-
 	/**
-	 * @param defect the defect to set
+	 * @param defect
+	 *            the defect to set
 	 */
 	public void setDefect(Vector<Integer> defect) {
 		Defect = defect;

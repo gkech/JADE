@@ -9,10 +9,10 @@ import jade.content.Predicate;
  * @author gkech
  *
  */
-public class PersonalPayoff implements Predicate{
+public class PersonalPayoff implements Predicate {
 	private static final long serialVersionUID = 1L;
 	private Integer ppayoff;
-	
+
 	/**
 	 * @return the ppayoff
 	 */
@@ -21,7 +21,8 @@ public class PersonalPayoff implements Predicate{
 	}
 
 	/**
-	 * @param ppayoff the ppayoff to set
+	 * @param ppayoff
+	 *            the ppayoff to set
 	 */
 	public void setPpayoff(Integer ppayoff) {
 		this.ppayoff = ppayoff;
