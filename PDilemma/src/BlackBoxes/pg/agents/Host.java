@@ -21,10 +21,10 @@ import jade.wrapper.PlatformController;
  * @author gkech
  *
  */
-public class Host extends Agent {
+public class Host extends Agent{
 	private static final long serialVersionUID = 1L;
 	protected Vector playersList = new Vector<Agent>();
-	protected int numAgents = 2;
+	protected int numAgents=2;
 	/**
 	 * Ontology Declarations
 	 */
@@ -33,54 +33,50 @@ public class Host extends Agent {
 	private Codec codec = new SLCodec();
 	// This behaviour "knows" the Music-Shop ontology
 	private Ontology ontology;
-	// end declarations
+	//end declarations
 
 	protected void setup() {
 
 		try {
 			ontology = GameOntology.getInstance();
-		} catch (BeanOntologyException e) {
+		}
+		catch (BeanOntologyException e) {
 			e.printStackTrace();
 		}
 		this.getContentManager().registerLanguage(codec);
 		this.getContentManager().registerOntology(ontology);
 
 		try {
-			// summon players
+			//summon players
 			SummonAgents(numAgents);
-			// add host Behaviour
-			Behaviour bhost = new HostBehaviour(this, playersList, numAgents);
+			//add host Behaviour
+			Behaviour bhost = new HostBehaviour(this,playersList,numAgents);
 			addBehaviour(bhost);
-		} catch (Exception e) {
-			System.out.println("SetUp Exception " + e);
+		}
+		catch (Exception e) {
+			System.out.println( "SetUp Exception " + e );
 			e.printStackTrace();
 		}
 	}
-
 	/**
 	 * Summon Agents func
 	 */
-	protected void SummonAgents(int numAgents) {
-
-		PlatformController container = getContainerController(); // get a
-																	// container
-																	// controller
-																	// for
-																	// creating
-																	// new
-																	// agents
+	protected void SummonAgents(int numAgents){
+		// get a container controller for creating new agents
+		PlatformController container = getContainerController(); 
 		// create N player-agents
 		try {
-			for (int i = 0; i < numAgents; i++) {
+			for (int i = 0;  i < numAgents;  i++) {
 				// create a new agent
-				String localName = "PgAgent" + i;
+				String localName = "PgAgent"+i;
 				AgentController summon = container.createNewAgent(localName, "pg.agents.Player", null);
 				summon.start();
 				// keep the guest's ID on a local list
-				playersList.add(new AID(localName, AID.ISLOCALNAME));
+				playersList.add( new AID(localName, AID.ISLOCALNAME) );
 			}
-		} catch (Exception e) {
-			System.err.println("Exception while adding agents: " + e);
+		}
+		catch (Exception e) {
+			System.err.println( "Exception while adding agents: " + e );
 			e.printStackTrace();
 		}
 	}
