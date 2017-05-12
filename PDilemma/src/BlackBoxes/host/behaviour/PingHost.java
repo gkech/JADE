@@ -17,6 +17,7 @@ public class PingHost extends Behaviour {
 	
 	public void action() {
 		ACLMessage  msg = myAgent.receive();
+		
         if(msg!=null){
             if(msg.getPerformative()== ACLMessage.REQUEST){
             	finish=true;
